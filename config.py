@@ -13,8 +13,8 @@ SCRAPING_CONFIG = {
 # Target URLs to scrape
 TARGET_URLS = {
     'books': [
-        'http://books.toscrape.com/catalogue/page-1.html',
-        'http://books.toscrape.com/catalogue/page-2.html',
+        'https://pdfdrive.com.co/',
+        'https://pdfdrive.com.co/',
     ],
     'products': [
         'https://webscraper.io/test-sites/e-commerce/allinone',

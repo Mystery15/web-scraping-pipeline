@@ -47,7 +47,7 @@ class WebScraper:
                     return None
     
     def scrape_books(self, urls: List[str]) -> List[Dict]:
-        """Scrape books from bookstoscrape.com"""
+        """Scrape books from pdfdrive.com.co"""
         all_books = []
         
         for url in urls:
@@ -68,7 +68,7 @@ class WebScraper:
                         'rating': book.p['class'][1],
                         'availability': book.find('p', class_='instock availability').text.strip(),
                         'category': url.split('/')[-2] if len(url.split('/')) >= 2 else 'unknown',
-                        'url': f"http://books.toscrape.com/catalogue/{book.h3.a['href']}",
+                        'url': f"https://pdfdrive.com.co/{book.h3.a['href']}",
                         'description': self._get_book_description(book.h3.a['href'])
                     }
                     all_books.append(book_data)
@@ -83,7 +83,7 @@ class WebScraper:
     def _get_book_description(self, book_path: str) -> str:
         """Get detailed description from individual book page"""
         try:
-            url = f"http://books.toscrape.com/catalogue/{book_path.replace('../../../', '')}"
+            url = f"https://pdfdrive.com.co/{book_path.replace('../../../', '')}"
             html = self.fetch_page(url)
             if html:
                 soup = BeautifulSoup(html, 'html.parser')
