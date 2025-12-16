@@ -1,0 +1,2 @@
+# web-scraping-pipeline
+A web scraping pipeline is an automated system that extracts raw data from websites, processes and cleans it (transformation), and then stores or loads it into a database or file for analysis, turning unstructured web content into structured, usable information for tasks like market research, price monitoring, or AI training. It's a multi-stage workflow involving crawling, extraction, cleaning, transformation, and loading (ETL), often orchestrated by tools like Apache Airflow and built with Python libraries (BeautifulSoup, Scrapy). 
